@@ -8,9 +8,7 @@ services:
     volumes:
       - ./www:/app
       - ./php.ini:/opt/docker/etc/php/php.ini
-    build:
-      context: . #indica o dir da Dockerfile
-      dockerfile: Dockerfile
+    build: .
     depends_on:
       - mysql
     networks:
