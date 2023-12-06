@@ -1,3 +1,2 @@
 www/*/
-mysql-data/*
-!mysql-data/index.html
+mysql/*
