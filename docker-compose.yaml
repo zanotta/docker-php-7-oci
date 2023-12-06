@@ -4,9 +4,9 @@ services:
   web:
     image: webdevops/php-apache:7.4
     ports:
-      - "4500:80"
+      - "80:80"
     volumes:
-      - ./www:/app
+      - ./htdocs:/app
       - ./php.ini:/opt/docker/etc/php/php.ini
     build: .
     depends_on:
@@ -19,7 +19,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./mysql-data:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
     networks:
       - app-network
     command: --default-authentication-plugin=mysql_native_password
