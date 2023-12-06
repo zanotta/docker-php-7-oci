@@ -8,6 +8,7 @@ services:
     volumes:
       - ./htdocs:/app
       - ./php.ini:/opt/docker/etc/php/php.ini
+      - ./db.ini:/var/secrets/db.ini
     build: .
     depends_on:
       - mysql

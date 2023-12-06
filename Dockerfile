@@ -5,6 +5,7 @@ RUN apt install -y libaio1 libaio-dev
 ADD instantclient-basic.zip /tmp/
 ADD instantclient-sdk.zip /tmp/
 RUN mkdir -p /opt/oracle
+RUN mkdir -p /var/secrets
 RUN unzip /tmp/instantclient-basic.zip -d /opt/oracle/
 RUN unzip /tmp/instantclient-sdk.zip -d /opt/oracle/
 RUN ln -s /opt/oracle/instantclient_19_21 /opt/oracle/instantclient
