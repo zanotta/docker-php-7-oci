@@ -1,2 +1,3 @@
 htdocs/*/
 mysql-data/*
+.DS_Store
