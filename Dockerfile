@@ -30,5 +30,19 @@ RUN echo 'instantclient,/opt/oracle/instantclient' | pecl install oci8-2.2.0 && 
 RUN docker-php-ext-configure pdo_oci --with-pdo-oci=instantclient,/opt/oracle/instantclient && \
     docker-php-ext-install pdo_oci
 
+# Instala o PhantomJS
+RUN apt-get update && \
+    apt-get install -y wget && \
+    wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
+    tar xvjf phantomjs-2.1.1-linux-x86_64.tar.bz2 -C /usr/local/share/ && \
+    ln -s /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/ && \
+    rm phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
+    apt-get remove -y wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 # Reinicia o serviço Apache
 RUN service apache2 restart
+
+RUN export OPENSSL_CONF=/etc/ssl/
+ENV OPENSSL_CONF /etc/ssl/
