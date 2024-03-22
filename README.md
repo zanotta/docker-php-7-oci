@@ -1,4 +1,4 @@
-## APACHE + PHP 7.4 + MYSQL + OCI8
+## APACHE + PHP 7.4 + MYSQL + OCI8 + PDO_OCI
 ### Ready for Apple M1/M2, Linux and Windows
 
 - docker-compose build
@@ -9,4 +9,3 @@
 
 ### To-Do
 - Change MySQL timezone
-- OCI PDO
