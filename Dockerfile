@@ -44,5 +44,5 @@ RUN apt-get update && \
 # Reinicia o serviço Apache
 RUN service apache2 restart
 
-RUN export OPENSSL_CONF=/etc/ssl/
-ENV OPENSSL_CONF /etc/ssl/
+#RUN export OPENSSL_CONF=/etc/ssl/
+#ENV OPENSSL_CONF /etc/ssl/
