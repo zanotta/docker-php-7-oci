@@ -6,6 +6,7 @@ services:
     platform: linux/amd64
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./htdocs:/app
       - ./php.ini:/opt/docker/etc/php/php.ini
